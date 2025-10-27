@@ -97,7 +97,7 @@
                         "uid": "ra1Z4X37z"
                     },
                     "editorMode": "builder",
-                    "expr": "sum(steam_games_playtime_total_minutes{steam_id=\"$steam_id\", platform=\"any\"})",
+                    "expr": "sum(steam_games_playtime_total_minutes{steam_id=\"$steam_id\", platform=\"any\", name=~\"$name\"})",
                     "legendFormat": "__auto",
                     "range": true,
                     "refId": "A"
@@ -160,8 +160,8 @@
             "pluginVersion": "12.2.0",
             "targets": [
                 {
-                    "editorMode": "code",
-                    "expr": "sum(steam_games_playtime_total_minutes{steam_id=\"$steam_id\", platform!=\"any\"}) by (platform)",
+                    "editorMode": "builder",
+                    "expr": "sum by(platform) (steam_games_playtime_total_minutes{steam_id=\"$steam_id\", platform!=\"any\", name=~\"$name\"})",
                     "legendFormat": "__auto",
                     "range": true,
                     "refId": "A"
@@ -514,5 +514,5 @@
     "timezone": "",
     "title": "Steam Playtime",
     "uid": "jTE1-ZGVk",
-    "version": 6
+    "version": 7
 }

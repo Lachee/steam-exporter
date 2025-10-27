@@ -20,6 +20,9 @@ Below are some of the measurements and their labels
     - app_id
     - name
 
+### Grafana
+A example grafana dashboard can be found in the grafana/dashboard.json
+
 ## Docker Image
 [lachee/steam-exporter](https://hub.docker.com/repository/docker/lachee/steam-exporter)
 
